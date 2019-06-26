@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Forms.Plugin.CardEntry.Abstractions;
+using Forms.Plugin.CardEntry.UWP;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms.Platform.UWP;
 
-namespace Plugin.CardEntry
+[assembly: ExportRenderer(typeof(CardEntry), typeof(CardEntryRenderer))]
+
+namespace Forms.Plugin.CardEntry.UWP
 {
     /// <summary>
     /// Interface for CardEntry
     /// </summary>
-    public class CardEntryRenderer : ViewRenderer<Entry, Ellipse>
+    public class CardEntryRenderer : EntryRenderer
     {
     }
 }
