@@ -63,6 +63,7 @@
 
   <ItemGroup>
     <Compile Include="Helpers\*.cs" />
+    <Compile Include="Behaviors\*.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">

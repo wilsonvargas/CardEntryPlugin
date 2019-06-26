@@ -1,4 +1,4 @@
-﻿using Forms.Plugin.CardEntry.Abstractions;
+﻿using Forms.Plugin.CardEntry.Shared;
 using Forms.Plugin.CardEntry.UWP;
 using System;
 using System.Collections.Generic;
