@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Forms.Plugin.CardEntry.Helpers
+namespace Forms.Plugin.CardEntry.Shared.Helpers
 {
     public enum ImageAlignment
     {
