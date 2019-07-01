@@ -2,7 +2,6 @@
 using Forms.Plugin.CardEntry.Shared.Helpers;
 using System;
 using System.ComponentModel;
-using System.Reflection;
 using Xamarin.Forms;
 
 namespace Forms.Plugin.CardEntry.Shared
@@ -13,14 +12,10 @@ namespace Forms.Plugin.CardEntry.Shared
         {
             HeightRequest = 50;
             Behaviors.Add(new CardBehavior() { Mask = "#### #### #### ####" });
-            Keyboard = Keyboard.Numeric;
-            HorizontalOptions = LayoutOptions.FillAndExpand;
         }
 
-        private static ImageSource defaultSource = ImageSource.FromResource("Forms.Plugin.CardEntry.Shared.Images.none.png", typeof(CardEntry).GetTypeInfo().Assembly);
-
         private static readonly BindableProperty ImageProperty =
-            BindableProperty.Create(nameof(Image), typeof(ImageSource), typeof(CardEntry), defaultSource);
+            BindableProperty.Create(nameof(Image), typeof(string), typeof(CardEntry), string.Empty);
 
         public static readonly BindableProperty LineColorProperty =
             BindableProperty.Create(nameof(LineColor), typeof(Color), typeof(CardEntry), Color.White);
@@ -34,9 +29,9 @@ namespace Forms.Plugin.CardEntry.Shared
             set { SetValue(LineColorProperty, value); }
         }       
 
-        public ImageSource Image
+        public string Image
         {
-            get { return (ImageSource)GetValue(ImageProperty); }
+            get { return (string)GetValue(ImageProperty); }
             set { SetValue(ImageProperty, value); }
         }
 
