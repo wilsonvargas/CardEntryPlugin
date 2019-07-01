@@ -44,6 +44,7 @@
     <Owners>YOU</Owners>
     <Authors>YOU</Authors>
     <Copyright>Copyright 2018</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
@@ -85,6 +86,20 @@
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
     <Compile Include="**\*.apple.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Shared\Images\amex.png" />
+    <None Remove="Shared\Images\master.png" />
+    <None Remove="Shared\Images\none.png" />
+    <None Remove="Shared\Images\visa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\Images\amex.png" />
+    <EmbeddedResource Include="Shared\Images\master.png" />
+    <EmbeddedResource Include="Shared\Images\none.png" />
+    <EmbeddedResource Include="Shared\Images\visa.png" />
   </ItemGroup>
 
   <ItemGroup>
