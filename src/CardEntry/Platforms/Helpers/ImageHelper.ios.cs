@@ -1,11 +1,8 @@
-﻿using Android.Content;
-using Android.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms.Platform.iOS;
 
 namespace Forms.Plugin.CardEntry.Platforms.Helpers
 {
@@ -29,12 +26,12 @@ namespace Forms.Plugin.CardEntry.Platforms.Helpers
             return returnValue;
         }
 
-        public static async Task<Bitmap> GetBitmapFromImageSourceAsync(ImageSource source, Context context)
+        public static async Task<UIImage> GetUIImageFromImageSourceAsync(ImageSource source)
         {
             var handler = GetHandler(source);
-            var returnValue = (Bitmap)null;
+            var returnValue = (UIImage)null;
 
-            returnValue = await handler.LoadImageAsync(source, context);
+            returnValue = await handler.LoadImageAsync(source);
 
             return returnValue;
         }
