@@ -1,7 +1,6 @@
 ﻿using Forms.Plugin.CardEntry.Shared.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
@@ -10,13 +9,6 @@ namespace Forms.Plugin.CardEntry.Shared.Behaviors
 {
     public class CardBehavior : Behavior<Entry>
     {
-
-        private const string VISA = "Forms.Plugin.CardEntry.Shared.Images.visa.png";
-        private const string AMEX = "Forms.Plugin.CardEntry.Shared.Images.amex.png";
-        private const string DISCOVER = "Forms.Plugin.CardEntry.Shared.Images.discover.png";
-        private const string MASTERCARD = "Forms.Plugin.CardEntry.Shared.Images.master.png";
-        private const string NONE = "Forms.Plugin.CardEntry.Shared.Images.none.png";
-
         private string _mask = "";
         public string Mask
         {
@@ -77,19 +69,19 @@ namespace Forms.Plugin.CardEntry.Shared.Behaviors
             switch (CreditCardHelper.GetCardTypeFromNumber(cardValue))
             {
                 case CreditCardTypeType.Amex:
-                    entry.Image = ImageSource.FromResource(AMEX, typeof(CardBehavior).GetTypeInfo().Assembly);
+                    entry.Image = "amex.png";
                     break;
                 case CreditCardTypeType.Discover:
-                    entry.Image = ImageSource.FromResource(DISCOVER, typeof(CardBehavior).GetTypeInfo().Assembly);
+                    entry.Image = "discover.png";
                     break;
                 case CreditCardTypeType.MasterCard:
-                    entry.Image = ImageSource.FromResource(MASTERCARD, typeof(CardBehavior).GetTypeInfo().Assembly);
+                    entry.Image = "master.png";
                     break;
                 case CreditCardTypeType.Visa:
-                    entry.Image = ImageSource.FromResource(VISA, typeof(CardBehavior).GetTypeInfo().Assembly);
+                    entry.Image = "visa.png";
                     break;
                 default:
-                    entry.Image = ImageSource.FromResource(NONE, typeof(CardBehavior).GetTypeInfo().Assembly);
+                    entry.Image = "none.png";
                     break;
             }
             
