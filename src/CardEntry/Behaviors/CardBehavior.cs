@@ -1,9 +1,6 @@
 ﻿using Forms.Plugin.CardForm.Shared.Helpers;
-using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
-using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
 namespace Forms.Plugin.CardForm.Shared.Behaviors

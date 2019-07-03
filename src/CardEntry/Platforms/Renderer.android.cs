@@ -1,15 +1,12 @@
 ﻿using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using Android.Support.V4.Content;
 using Forms.Plugin.CardForm.Droid;
 using Forms.Plugin.CardEntry.Platforms.Helpers;
 using Forms.Plugin.CardForm.Controls;
 using Forms.Plugin.CardForm.Shared.Helpers;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;

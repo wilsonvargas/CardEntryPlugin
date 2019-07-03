@@ -1,8 +1,5 @@
 ﻿using Android.Content;
 using Android.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;

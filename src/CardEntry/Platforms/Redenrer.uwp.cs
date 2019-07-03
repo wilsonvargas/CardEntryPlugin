@@ -1,8 +1,5 @@
 ﻿using Forms.Plugin.CardForm.Controls;
 using Forms.Plugin.CardForm.UWP;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(CardEntry), typeof(CardEntryRenderer))]

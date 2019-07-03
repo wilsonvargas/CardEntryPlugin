@@ -1,7 +1,5 @@
 ﻿using Forms.Plugin.CardForm.Shared.Behaviors;
 using Forms.Plugin.CardForm.Shared.Helpers;
-using System;
-using System.ComponentModel;
 using System.Reflection;
 using Xamarin.Forms;
 
