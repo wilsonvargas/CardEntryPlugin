@@ -89,6 +89,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Shared\Controls\CVVEntry.shared.cs" />
+    <Compile Remove="Shared\Controls\DateEntry.shared.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Shared\Images\amex.png" />
     <None Remove="Shared\Images\discover.png" />
     <None Remove="Shared\Images\master.png" />
