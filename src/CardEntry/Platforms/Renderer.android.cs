@@ -4,7 +4,7 @@ using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using Forms.Plugin.CardForm.Droid;
 using Forms.Plugin.CardEntry.Platforms.Helpers;
-using Forms.Plugin.CardForm;
+using Forms.Plugin.CardForm.Controls;
 using Forms.Plugin.CardForm.Shared.Helpers;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Card = Forms.Plugin.CardForm.CardEntry;
+using Card = Forms.Plugin.CardForm.Controls.CardEntry;
 
 [assembly: ExportRenderer(typeof(CardEntry), typeof(CardEntryRenderer))]
 namespace Forms.Plugin.CardForm.Droid

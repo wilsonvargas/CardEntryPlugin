@@ -1,4 +1,4 @@
-﻿using Forms.Plugin.CardForm;
+﻿using Forms.Plugin.CardForm.Controls;
 using Forms.Plugin.CardForm.UWP;
 using System;
 using System.Collections.Generic;

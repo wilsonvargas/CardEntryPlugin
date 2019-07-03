@@ -11,11 +11,11 @@ namespace Forms.Plugin.CardForm.Shared.Behaviors
     public class CardBehavior : Behavior<Entry>
     {
 
-        private const string VISA = "Forms.Plugin.CardForm.Images.visa.png";
-        private const string AMEX = "Forms.Plugin.CardForm.Images.amex.png";
-        private const string DISCOVER = "Forms.Plugin.CardForm.Images.discover.png";
-        private const string MASTERCARD = "Forms.Plugin.CardForm.Images.master.png";
-        private const string NONE = "Forms.Plugin.CardForm.Images.none.png";
+        private const string VISA = "Forms.Plugin.CardForm.Shared.Images.visa.png";
+        private const string AMEX = "Forms.Plugin.CardForm.Shared.Images.amex.png";
+        private const string DISCOVER = "Forms.Plugin.CardForm.Shared.Images.discover.png";
+        private const string MASTERCARD = "Forms.Plugin.CardForm.Shared.Images.master.png";
+        private const string NONE = "Forms.Plugin.CardForm.Shared.Images.none.png";
 
         private string _mask = "";
         public string Mask
@@ -60,7 +60,7 @@ namespace Forms.Plugin.CardForm.Shared.Behaviors
 
         private void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
-            var entry = sender as CardEntry;
+            var entry = sender as Controls.CardEntry;
 
             var cardValue = entry.Text;
 
