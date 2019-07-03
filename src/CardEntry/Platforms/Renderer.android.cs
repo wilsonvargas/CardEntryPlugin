@@ -2,10 +2,10 @@
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
-using Forms.Plugin.CardEntry.Droid;
+using Forms.Plugin.CardForm.Droid;
 using Forms.Plugin.CardEntry.Platforms.Helpers;
-using Forms.Plugin.CardEntry.Shared;
-using Forms.Plugin.CardEntry.Shared.Helpers;
+using Forms.Plugin.CardForm;
+using Forms.Plugin.CardForm.Shared.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +13,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Card = Forms.Plugin.CardEntry.Shared.CardEntry;
+using Card = Forms.Plugin.CardForm.CardEntry;
 
 [assembly: ExportRenderer(typeof(CardEntry), typeof(CardEntryRenderer))]
-namespace Forms.Plugin.CardEntry.Droid
+namespace Forms.Plugin.CardForm.Droid
 {
     public class CardEntryRenderer : EntryRenderer
     {

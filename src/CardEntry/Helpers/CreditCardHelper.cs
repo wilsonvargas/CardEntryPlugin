@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
 
-namespace Forms.Plugin.CardEntry.Shared.Helpers
+namespace Forms.Plugin.CardForm.Shared.Helpers
 {
     public class CreditCardHelper
     {
-        private const string cardRegex = "^(?:(?<Visa>4\\d{3})|(?<MasterCard>5[1-5]\\d{2})|(?<Discover>6011)|(?<DinersClub>(?:3[68]\\d{2})|(?:30[0-5]\\d))|(?<Amex>3[47]\\d{2}))([ -]?)(?(DinersClub)(?:\\d{6}\\1\\d{4})|(?(Amex)(?:\\d{6}\\1\\d{5})|(?:\\d{4}\\1\\d{4}\\1\\d{4})))$";
+        private const string cardRegex = "^(?:(?<Visa>4[0-9]{1,12}(?:[0-9]{3})?)|(?<mastercard>5[1-5] [0-9]{14})|(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|(?<amex>3[47] [0-9]{13})|(?<diners>3(?:0[0-5]|[68] [0-9])[0-9]{11})|(?<jcb>(?:2131|1800|35[0-9]{3})[0-9]{11}))$";
 
         public static bool IsValidNumber(string cardNum)
         {
@@ -42,26 +39,27 @@ namespace Forms.Plugin.CardEntry.Shared.Helpers
             Regex cardTest = new Regex(cardRegex);
 
             GroupCollection gc = cardTest.Match(cardNum).Groups;
+            cardNum = cardNum.Replace(" ", "").Replace("-", "");
 
-            if (gc[CreditCardTypeType.Amex.ToString()].Success)
+            if (Regex.Match(cardNum, @"^3[47][0-9]{1,13}$").Success)
             {
                 return CreditCardTypeType.Amex;
             }
-            else if (gc[CreditCardTypeType.MasterCard.ToString()].Success)
+            else if (Regex.Match(cardNum, @"^(?:5[1-5][0-9]{1,2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{1,2}|27[01][0-9]|2720)[0-9]{1,12}$").Success)
             {
                 return CreditCardTypeType.MasterCard;
             }
-            else if (gc[CreditCardTypeType.Visa.ToString()].Success)
+            else if (Regex.Match(cardNum, @"^4[0-9]{1,12}(?:[0-9]{1,3})?$").Success)
             {
                 return CreditCardTypeType.Visa;
             }
-            else if (gc[CreditCardTypeType.Discover.ToString()].Success)
+            else if (Regex.Match(cardNum, @"^6(?:011|5[0-9]{2})[0-9]{1,12}$").Success)
             {
                 return CreditCardTypeType.Discover;
             }
             else
             {
-                return null;
+                return CreditCardTypeType.None;
             }
         }
 

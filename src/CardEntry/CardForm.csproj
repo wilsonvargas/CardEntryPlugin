@@ -9,9 +9,9 @@
     netstandard1.0;netstandard2.0;MonoAndroid81;Xamarin.iOS10;uap10.0.16299;Xamarin.TVOS10;Xamarin.WatchOS10;Xamarin.Mac20;Tizen40
     For UWP update the version number with a version number you have installed.
     -->
-    <AssemblyName>Forms.Plugin.CardEntry</AssemblyName>
-    <RootNamespace>Forms.Plugin.CardEntry</RootNamespace>
-    <PackageId>Plugin.CardEntry</PackageId>
+    <AssemblyName>Forms.Plugin.CardForm</AssemblyName>
+    <RootNamespace>Forms.Plugin.CardForm</RootNamespace>
+    <PackageId>Plugin.CardForm</PackageId>
     
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -90,6 +90,7 @@
 
   <ItemGroup>
     <None Remove="Shared\Images\amex.png" />
+    <None Remove="Shared\Images\discover.png" />
     <None Remove="Shared\Images\master.png" />
     <None Remove="Shared\Images\none.png" />
     <None Remove="Shared\Images\visa.png" />
@@ -97,6 +98,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Shared\Images\amex.png" />
+    <EmbeddedResource Include="Shared\Images\discover.png" />
     <EmbeddedResource Include="Shared\Images\master.png" />
     <EmbeddedResource Include="Shared\Images\none.png" />
     <EmbeddedResource Include="Shared\Images\visa.png" />

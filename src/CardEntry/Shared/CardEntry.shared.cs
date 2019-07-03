@@ -1,11 +1,11 @@
-﻿using Forms.Plugin.CardEntry.Shared.Behaviors;
-using Forms.Plugin.CardEntry.Shared.Helpers;
+﻿using Forms.Plugin.CardForm.Shared.Behaviors;
+using Forms.Plugin.CardForm.Shared.Helpers;
 using System;
 using System.ComponentModel;
 using System.Reflection;
 using Xamarin.Forms;
 
-namespace Forms.Plugin.CardEntry.Shared
+namespace Forms.Plugin.CardForm
 {
     public class CardEntry : Entry
     {
@@ -17,7 +17,7 @@ namespace Forms.Plugin.CardEntry.Shared
             HorizontalOptions = LayoutOptions.FillAndExpand;
         }
 
-        private static ImageSource defaultSource = ImageSource.FromResource("Forms.Plugin.CardEntry.Shared.Images.none.png", typeof(CardEntry).GetTypeInfo().Assembly);
+        private static ImageSource defaultSource = ImageSource.FromResource("Forms.Plugin.CardForm.Images.none.png", typeof(CardEntry).GetTypeInfo().Assembly);
 
         private static readonly BindableProperty ImageProperty =
             BindableProperty.Create(nameof(Image), typeof(ImageSource), typeof(CardEntry), defaultSource);
