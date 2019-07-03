@@ -69,7 +69,7 @@ namespace Forms.Plugin.CardEntry.Shared.Behaviors
 
             if (cardValue.Length > _mask.Length)
             {
-                //entry.Text = text.Remove(text.Length - 1);
+                entry.Text = cardValue.Remove(cardValue.Length - 1);
                 entry.Unfocus();
                 return;
             }
