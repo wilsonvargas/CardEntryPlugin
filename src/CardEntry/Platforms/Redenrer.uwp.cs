@@ -6,9 +6,6 @@ using Xamarin.Forms.Platform.UWP;
 
 namespace Forms.Plugin.CardForm.UWP
 {
-    /// <summary>
-    /// Interface for CardEntry
-    /// </summary>
     public class CardEntryRenderer : EntryRenderer
     {
     }

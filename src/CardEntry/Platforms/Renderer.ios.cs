@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Forms.Plugin.CardForm.Controls;
+using Forms.Plugin.CardForm.iOS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
