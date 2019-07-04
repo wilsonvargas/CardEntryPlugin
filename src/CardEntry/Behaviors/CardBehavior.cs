@@ -7,7 +7,6 @@ namespace Forms.Plugin.CardForm.Shared.Behaviors
 {
     public class CardBehavior : Behavior<Entry>
     {
-
         private const string VISA = "Forms.Plugin.CardForm.Shared.Images.visa.png";
         private const string AMEX = "Forms.Plugin.CardForm.Shared.Images.amex.png";
         private const string DISCOVER = "Forms.Plugin.CardForm.Shared.Images.discover.png";
@@ -57,7 +56,7 @@ namespace Forms.Plugin.CardForm.Shared.Behaviors
 
         private void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
-            var entry = sender as Controls.CardEntry;
+            var entry = sender as Entry;
 
             var cardValue = entry.Text;
 
@@ -70,26 +69,29 @@ namespace Forms.Plugin.CardForm.Shared.Behaviors
                 entry.Unfocus();
                 return;
             }
-
-            switch (CreditCardHelper.GetCardTypeFromNumber(cardValue))
+            if (sender is Controls.CardEntry)
             {
-                case CreditCardTypeType.Amex:
-                    entry.Image = ImageSource.FromResource(AMEX, typeof(CardBehavior).GetTypeInfo().Assembly);
-                    break;
-                case CreditCardTypeType.Discover:
-                    entry.Image = ImageSource.FromResource(DISCOVER, typeof(CardBehavior).GetTypeInfo().Assembly);
-                    break;
-                case CreditCardTypeType.MasterCard:
-                    entry.Image = ImageSource.FromResource(MASTERCARD, typeof(CardBehavior).GetTypeInfo().Assembly);
-                    break;
-                case CreditCardTypeType.Visa:
-                    entry.Image = ImageSource.FromResource(VISA, typeof(CardBehavior).GetTypeInfo().Assembly);
-                    break;
-                default:
-                    entry.Image = ImageSource.FromResource(NONE, typeof(CardBehavior).GetTypeInfo().Assembly);
-                    break;
+                var cardEntry = sender as Controls.CardEntry;
+
+                switch (CreditCardHelper.GetCardTypeFromNumber(cardValue))
+                {                    
+                    case CreditCardTypeType.Amex:
+                        cardEntry.Image = ImageSource.FromResource(AMEX, typeof(CardBehavior).GetTypeInfo().Assembly);
+                        break;
+                    case CreditCardTypeType.Discover:
+                        cardEntry.Image = ImageSource.FromResource(DISCOVER, typeof(CardBehavior).GetTypeInfo().Assembly);
+                        break;
+                    case CreditCardTypeType.MasterCard:
+                        cardEntry.Image = ImageSource.FromResource(MASTERCARD, typeof(CardBehavior).GetTypeInfo().Assembly);
+                        break;
+                    case CreditCardTypeType.Visa:
+                        cardEntry.Image = ImageSource.FromResource(VISA, typeof(CardBehavior).GetTypeInfo().Assembly);
+                        break;
+                    default:
+                        cardEntry.Image = ImageSource.FromResource(NONE, typeof(CardBehavior).GetTypeInfo().Assembly);
+                        break;
+                }
             }
-            
 
             foreach (var position in _positions)
                 if (cardValue.Length >= position.Key + 1)
