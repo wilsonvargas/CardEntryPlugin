@@ -85,20 +85,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
-    <Compile Include="**\*.apple.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Shared\Controls\CVVEntry.shared.cs" />
-    <Compile Remove="Shared\Controls\DateEntry.shared.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Shared\Images\amex.png" />
-    <None Remove="Shared\Images\discover.png" />
-    <None Remove="Shared\Images\master.png" />
-    <None Remove="Shared\Images\none.png" />
-    <None Remove="Shared\Images\visa.png" />
+    <Compile Include="**\*.ios.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -110,7 +97,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
   </ItemGroup>
 
   <!--Additional item groups-->
