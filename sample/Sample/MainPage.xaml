@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Sample"
+             xmlns:cardForm="clr-namespace:Forms.Plugin.CardForm.Controls;assembly=Forms.Plugin.CardForm"
+             x:Class="Sample.MainPage">
+
+    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+        <cardForm:CardEntry LineColor="Black"/>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <cardForm:CVVEntry />
+            <cardForm:DateEntry />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
