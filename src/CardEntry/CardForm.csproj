@@ -29,9 +29,9 @@
     <LangVersion>latest</LangVersion>
     
     <!--TODO: Fill these in-->
-    <PackageLicenseUrl>https://github.com/wilsonvargas/CardEntry/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/wilsonvargas/CardEntry</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/wilsonvargas/CardEntry</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/wilsonvargas/CardEntryPlugin/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/wilsonvargas/CardEntryPlugin</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/wilsonvargas/CardEntryPlugin</RepositoryUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageIconUrl>ICON URL</PackageIconUrl>
     <PackageTags>xamarin, windows, ios, android, xamarin.forms, plugin, credit card,</PackageTags>
