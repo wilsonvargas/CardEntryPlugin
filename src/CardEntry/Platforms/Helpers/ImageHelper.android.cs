@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-namespace Forms.Plugin.CardEntry.Platforms.Helpers
+namespace Forms.Plugin.CardForm.Platforms.Helpers
 {
     public class ImageHelper
     {

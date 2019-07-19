@@ -1,6 +1,6 @@
 ﻿using CoreAnimation;
 using CoreGraphics;
-using Forms.Plugin.CardEntry.Platforms.Helpers;
+using Forms.Plugin.CardForm.Platforms.Helpers;
 using Forms.Plugin.CardForm.Controls;
 using Forms.Plugin.CardForm.iOS;
 using Forms.Plugin.CardForm.Shared.Helpers;

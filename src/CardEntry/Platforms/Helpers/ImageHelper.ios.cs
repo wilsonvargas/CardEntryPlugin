@@ -3,7 +3,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-namespace Forms.Plugin.CardEntry.Platforms.Helpers
+namespace Forms.Plugin.CardForm.Platforms.Helpers
 {
     public class ImageHelper
     {
