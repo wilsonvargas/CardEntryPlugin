@@ -17,6 +17,7 @@ namespace Forms.Plugin.CardForm.UWP
         {
             var temp = DateTime.Now;
         }
+
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
@@ -38,7 +39,7 @@ namespace Forms.Plugin.CardForm.UWP
                 SetIcon(view);
         }
 
-        private async void SetIcon(CardEntry view)
+        private async void SetIcon(Card view)
         {
             if (view.Image != null)
             {
