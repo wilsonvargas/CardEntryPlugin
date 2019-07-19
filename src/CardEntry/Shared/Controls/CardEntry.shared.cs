@@ -17,7 +17,7 @@ namespace Forms.Plugin.CardForm.Controls
 
         private static ImageSource defaultSource = ImageSource.FromResource("Forms.Plugin.CardForm.Shared.Images.none.png", typeof(CardEntry).GetTypeInfo().Assembly);
 
-        private static readonly BindableProperty ImageProperty =
+        public static readonly BindableProperty ImageProperty =
             BindableProperty.Create(nameof(Image), typeof(ImageSource), typeof(CardEntry), defaultSource);
 
         public static readonly BindableProperty LineColorProperty =
