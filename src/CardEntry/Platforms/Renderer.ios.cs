@@ -10,46 +10,67 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Card = Forms.Plugin.CardForm.Controls.CardEntry;
+using System.ComponentModel;
+using System;
 
 [assembly: ExportRenderer(typeof(Card), typeof(CardEntryRenderer))]
 namespace Forms.Plugin.CardForm.iOS
 {
     public class CardEntryRenderer : EntryRenderer
     {
-        protected override async void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override async void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.OnElementChanged(e);
-
-            if (e.OldElement != null || e.NewElement == null)
-                return;
-
-            var element = (Card)Element;
-            var textField = this.Control;
-            if (element.Image != null)
+            try
             {
-                switch (element.ImageAlignment)
+                base.OnElementPropertyChanged(sender, e);
+
+                var element = (Card)Element;
+                var textField = this.Control;
+                if (element.Image != null)
                 {
-                    case ImageAlignment.Left:
-                        textField.LeftViewMode = UITextFieldViewMode.Always;
-                        textField.LeftView = await GetImageView(element.Image, 40, 50);
-                        break;
-                    case ImageAlignment.Right:
-                        textField.RightViewMode = UITextFieldViewMode.Always;
-                        textField.RightView = await GetImageView(element.Image, 40, 50);
-                        break;
+                    switch (element.ImageAlignment)
+                    {
+                        case ImageAlignment.Left:
+                            textField.LeftViewMode = UITextFieldViewMode.Always;
+                            textField.LeftView = await GetImageView(element.Image, 40, 50);
+                            break;
+                        case ImageAlignment.Right:
+                            textField.RightViewMode = UITextFieldViewMode.Always;
+                            textField.RightView = await GetImageView(element.Image, 40, 50);
+                            break;
+                    }
                 }
+
+                textField.BorderStyle = UITextBorderStyle.None;
+                CALayer bottomBorder = new CALayer
+                {
+                    Frame = new CGRect(0.0f, element.HeightRequest - 1, this.Frame.Width, 1.0f),
+                    BorderWidth = 2.0f,
+                    BorderColor = element.LineColor.ToCGColor()
+                };
+
+                textField.Layer.AddSublayer(bottomBorder);
+                textField.Layer.MasksToBounds = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
             }
 
-            textField.BorderStyle = UITextBorderStyle.None;
-            CALayer bottomBorder = new CALayer
+        }
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        {
+            try
             {
-                Frame = new CGRect(0.0f, element.HeightRequest - 1, this.Frame.Width, 1.0f),
-                BorderWidth = 2.0f,
-                BorderColor = element.LineColor.ToCGColor()
-            };
+                base.OnElementChanged(e);
+                if (e.OldElement != null || e.NewElement == null)
+                    return;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
 
-            textField.Layer.AddSublayer(bottomBorder);
-            textField.Layer.MasksToBounds = true;
         }
 
         private async Task<UIView> GetImageView(ImageSource imageSource, int height, int width)

@@ -152,6 +152,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\src\CardEntry\CardForm.csproj">
+      <Project>{e0e450cc-e066-4d50-bbd7-0d091930248f}</Project>
+      <Name>CardForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sample\Sample.csproj">
       <Project>{C77EA882-649F-404B-A629-78F8D96408B4}</Project>
       <Name>Sample</Name>
